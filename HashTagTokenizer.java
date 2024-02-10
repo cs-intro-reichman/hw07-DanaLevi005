@@ -40,11 +40,12 @@ public class HashTagTokenizer {
         int N = hashtag.length();
 
         for (int i = 1; i <= N; i++) {
+		// #feedback - you can avoid this assignment to a new variable and call existInDictionary directly in the if.
 			boolean isExist = existInDictionary(lowerCaseHashtag.substring(0, i), dictionary);
 			if (isExist) {
 				System.out.println(lowerCaseHashtag.substring(0,i));
 				breakHashTag(lowerCaseHashtag.substring(i), dictionary);
-				
+				// #feedback - you should break from the loop here.
 			}
 		
         }
